@@ -15,6 +15,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Kategori Görsel</th>
                                 <th>Kategori Adı</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
@@ -26,6 +27,7 @@
                                 count++;
                                 <tr>
                                     <th scope="row">@count</th>
+                                    <td><img src="@item.ImageUrl" width="75" height="75" /></td>
                                     <td>@item.CategoryName</td>
                                     <td><a href="/Admin/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
                                     <td><a href="/Admin/Category/UpdateCategory/@item.CategoryID" class="btn btn-success">Güncelle</a></td>
