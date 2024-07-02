@@ -12,6 +12,7 @@ using MultiShop.Catalog.Services.SpecialOfferServices;
 using MultiShop.Catalog.Services.FeatureServices;
 using MultiShop.Catalog.Services.OfferDiscountServices;
 using MultiShop.Catalog.Services.BrandServices;
+using MultiShop.Catalog.Services.AboutServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +32,7 @@ builder.Services.AddScoped<ISpecialOfferService, SpecialOfferService>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<IOfferDiscountService, OfferDiscountService>();
 builder.Services.AddScoped<IBrandService, BrandService>();
+builder.Services.AddScoped<IAboutService, AboutService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
