@@ -6,7 +6,6 @@
     int count = 0;
 }
 
-
 <section class="content container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -21,6 +20,7 @@
                                 <th>Ürün Kategori</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
+                                <th>Ürün Görselleri</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +34,7 @@
                                     <td>@item.Category.CategoryName</td>
                                     <td><a href="/Admin/Product/DeleteProduct/@item.ProductID" class="btn btn-danger">Sil</a></td>
                                     <td><a href="/Admin/Product/UpdateProduct/@item.ProductID" class="btn btn-success">Güncelle</a></td>
+                                    <td><a href="/Admin/ProductImage/ProductImageDetail/@item.ProductID" class="btn btn-warning">Ürün Görselleri</a></td>
                                 </tr>
                             }
                         </tbody>
