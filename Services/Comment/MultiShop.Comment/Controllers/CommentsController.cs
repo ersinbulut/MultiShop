@@ -53,5 +53,12 @@ namespace MultiShop.Comment.Controllers
             _context.SaveChanges();
             return Ok("Yorum başarıyla güncellendi");
         }
+
+        [HttpGet("CommentListByProductId")]
+        public IActionResult CommentListByProductId(string id)
+        {
+            var values = _context.UserComments.Where(x=>x.ProductID == id).ToList();
+            return Ok(values);
+        }
     }
 }
