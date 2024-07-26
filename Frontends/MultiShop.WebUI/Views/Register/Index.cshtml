@@ -1,4 +1,4 @@
-﻿
+﻿@model CreateRegisterDto
 @{
     Layout = null;
 }
@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>MultiShop</title>
+	<title>MultiShop Kayıt Paneli</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Font-->
@@ -26,44 +26,52 @@
 				<p class="text-1">MultiShop projemiz üzerinden e-ticaret işlemlerini gerçekleştirebilmek, indirimli ürünler ve fırsatlardan haberdar olmak
 					adına 1 dakikada kayıt işlemini gerçekleştirin..
 				</p>
+				<p class="text-2">
+					Eğer bir hesabınız varsa kayıt olmaya gerek duymadan aşağıdaki link üzerinden hemen
+					giriş sayfasına gidebilirsiniz.
+				</p>
 				<div class="form-left-last">
-				   <a href="" class="acount">Giriş Yap</a>
+				   <a href="/Login/Index/" class="acount">Giriş Yap</a>
 				</div>
 			</div>
-			<form class="form-detail" action="#" method="post" id="myform">
+			<form class="form-detail" method="post">
 				<h2>MultiShop Kayıt Formu</h2>
 				<div class="form-group">
 					<div class="form-row form-row-1">
 						<label for="first_name">Adınız</label>
-						<input type="text" name="first_name" id="first_name" class="input-text">
+						<input type="text" asp-for="Name" id="first_name" class="input-text">
 					</div>
 					<div class="form-row form-row-1">
 						<label for="last_name">Soyadınız</label>
-						<input type="text" name="last_name" id="last_name" class="input-text">
+						<input type="text" asp-for="Surname" id="last_name" class="input-text">
 					</div>
 				</div>
 				<div class="form-row">
 					<label for="your_email">Email Adresi</label>
-					<input type="text" name="your_email" id="your_email" class="input-text" required pattern="[a-zA-Z]{2,6}">
+					<input type="text" asp-for="Email" id="your_email" class="input-text" required>
+				</div>
+				<div class="form-row">
+					<label for="username">Kullanıcı Adı</label>
+					<input type="text" asp-for="Username" id="username" class="input-text" required>
 				</div>
 				<div class="form-group">
 					<div class="form-row form-row-1 ">
 						<label for="password">Şifre</label>
-						<input type="password" name="password" id="password" class="input-text" required>
+						<input type="password" asp-for="Password" id="password" class="input-text" required>
 					</div>
 					<div class="form-row form-row-1">
 						<label for="comfirm-password">Şifre Tekrar</label>
-						<input type="password" name="comfirm_password" id="comfirm_password" class="input-text" required>
+						<input type="password" asp-for="ConfirmPassword" id="comfirm_password" class="input-text" required>
 					</div>
 				</div>
-				<div class="form-checkbox">
+			@* 	<div class="form-checkbox">
 					<label class="container"><p>Şartları okudum <a href="#" class="text">Kabul ediyorum.</a></p>
 					  	<input type="checkbox" name="checkbox">
 					  	<span class="checkmark"></span>
 					</label>
-				</div>
+				</div> *@
 				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Kayıt Ol">
+					<button class="register">Kayıt Ol</button>
 				</div>
 			</form>
 		</div>
